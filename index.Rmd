@@ -11,8 +11,9 @@ And I can put all kinds of stuff on it!
 
 I like [google](https://www.google.com)
 
-I can link directly to my [about page](about.html)
+I can link directly to my [code page](code.html)
 
 ##Picture of my dog
 
 <img src="images/IMG_4467.jpg" style="width:75%">
+

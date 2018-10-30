@@ -1,17 +1,23 @@
 ---
-title: "Holy cow!"
+title: "Alina Levine's Personal Webpage"
 ---
 
 ### I have a webpage!
 
-And I can put all kinds of stuff on it!
+I am a first year masters student in the biostatistics department at Columbia University
 
 
 ##Add some links
 
-I like [google](https://www.google.com)
+Here is a link to my [github page] (https://github.com/alinalevine)
 
-I can link directly to my [code page](code.html)
+
+Here is a link to my [linkedin] (https://www.linkedin.com/in/alina-levine-bb630a10a/)
+
+
+Here is a link to my [CV] (cv.html)
+
+Here is a link to my [dashboard](dashboard.html)
 
 ##Picture of my dog
 

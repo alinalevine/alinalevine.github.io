@@ -1,0 +1,25 @@
+---
+output: html_document
+---
+
+
+Alina Levine
+============
+al3851@cumc.columbia.edu
+
+(914)-819-8047
+
+
+Education
+---------
+
+September 2018 - Present
+:   **MS student, Biosatistics**; Columbia University (NY, NY)  
+<br>
+**2012-2016**
+:   **BA, Applied Mathematics**; Macaulay Honors College at Queens College (NY, NY)
+
+
+
+Experience
+----------

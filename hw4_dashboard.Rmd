@@ -91,7 +91,8 @@ ny_noaa_df %>%
   filter(month %in% c("Mar", "Feb", "Jan", "Dec")) %>%
   mutate(Snowed_yn = ifelse(snow > 0, "snowfall day","no snowfall day")) %>%
   plot_ly(x = ~Snowed_yn, y = ~tmax, color = ~Snowed_yn, type = "box") %>%
-  layout(title = "Max Daily Temp Dec-Mar by Snowfall Status")
+  layout(title = "Max Daily Temp Dec-Mar by Snowfall Status",
+         yaxis = list(title = "Maximum Daily Temperature"))
   
 
 

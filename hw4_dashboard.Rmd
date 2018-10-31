@@ -30,8 +30,10 @@ ny_noaa_df = ny_noaa %>%
   mutate(snwd = (as.numeric(snwd) / 10) / 2.54, snow = (as.numeric(snow) / 10) / 2.54) %>%
   mutate(prcp = (as.numeric(prcp) / 100) / 2.54) %>%
   mutate(snow = ifelse(snow < 0, NA, snow)) %>%
-  sample_n(5000)
-
+  mutate(month = month.abb[month]) %>%
+  mutate(month = factor(month, 
+                        levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))) %>%
+  sample_n(10000)
 ```
 
 
@@ -41,9 +43,10 @@ Column {data-width=650}
 ### Chart A
 ```{r}
 ny_noaa_df %>%
-  plot_ly(x = ~tmin, y = ~tmax, type = "scatter", mode = "markers",
+  plot_ly(x = ~tmin, y = ~tmax, type = "scatter", color = ~month, mode = "markers",
           alpha = .5,
-          text = ~date ) %>%
+          text = ~date,
+          colorscale='Viridis') %>%
   layout(title = "Min vs. Max Temperatures in NY from 1981-2010",
          xaxis = list(title = "Min Temperature (Degrees F)", autotick = F, dtick = 10),
          yaxis = list(title = "Max Temperature (Degrees F)"))
@@ -67,8 +70,8 @@ ny_noaa_df %>%
   plot_ly(x = ~year, y = ~mean_snowfall, type = "scatter", mode = "lines",
           alpha = .5) %>%
   layout(title = "Yearly Mean Snowfall from 1981-2010",
-         xaxis = list(title = "Year"),
-         yaxis = list(title = "Mean Snowfall (inches)",tickangle = 45))
+         xaxis = list(title = "Year", tickangle = -45),
+         yaxis = list(title = "Mean Snowfall (inches)"))
 
   
 
@@ -81,6 +84,17 @@ ny_noaa_df %>%
 ### Chart C
 
 ```{r}
+
+#boxplots for distribution of max temperatures on days when it snowed and didn't snow in dec - march 
+
+ny_noaa_df %>%
+  filter(month %in% c("Mar", "Feb", "Jan", "Dec")) %>%
+  mutate(Snowed_yn = ifelse(snow > 0, "snowfall day","no snowfall day")) %>%
+  plot_ly(x = ~Snowed_yn, y = ~tmax, color = ~Snowed_yn, type = "box") %>%
+  layout(title = "Max Daily Temp Dec-Mar by Snowfall Status")
+  
+
+
 
 ```
 

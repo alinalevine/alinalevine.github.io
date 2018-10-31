@@ -14,12 +14,71 @@ Education
 ---------
 
 September 2018 - Present
-:   **MS student, Biosatistics**; Columbia University (NY, NY)  
+:   **MS student, Biosatistics**; Columbia University (New York, NY)  
 <br>
 **2012-2016**
-:   **BA, Applied Mathematics**; Macaulay Honors College at Queens College (NY, NY)
+:   **BA, Applied Mathematics**; Macaulay Honors College at Queens College (New York, NY)
 
 
 
-Experience
+Internships
 ----------
+
+**September 2016-June 2017**
+:  **Research Intern** 
+Weill Cornell Medical College, New York, NY
+
+* Merged a collection of 12 sarcoma clinical trials
+
+* Created time-to-event variables and variable summaries
+
+* Assisted with survival and log rank analysis of sarcoma clinical trials
+
+**Summer 2016**
+:  **Archimedes Scholar**, University of California-Merced
+
+* In a team setting, analyzed methods of numerical integration
+
+* Contributed to the coding of a gravity current simulator
+
+**Summer 2015**
+:  **Outward Bound Freshman Orientation Leader** Outward Bound, New York, NY
+
+* Interviewed group leaders and communicated with them to ensure smooth running of orientation
+
+* Led orientation activities with students to promote team building
+
+
+Work Experience
+---------------
+
+**Spring 2018**
+:  **Data Scientist**, Chatdesk, New York, NY
+
+* Wrote regular expressions to filter out boilerplates for a machine learning software categorizing customer service communication
+
+**June 2016-January 2018**
+:  **Research Assistant**, Queens College, New York, NY
+
+* Identified clinical trials as candidates for implementation of a personalized medicine statistical inference software
+
+* Cleaned and formatted clinical trial data
+
+* Co-authored PTE software paper and R package
+
+**Spring 2015-Present**
+:  **Math Tutor**, Pelham, NY
+
+* Tutor college level statistics and all areas of high school math
+
+**April-June 2017**
+:  **Applied Math Curriculum Consultant**, Queens College, New York, NY
+
+* Worked with a Queens College math professsor to revise the applied math major and designed several applied math major course pathways.
+
+
+
+
+
+
+

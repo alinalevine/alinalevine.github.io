@@ -1,6 +1,6 @@
 
 ---
-title: "Untitled"
+title: "NY_NOAA dataset"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -17,34 +17,40 @@ library(p8105.datasets)
 
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
-
-### Chart A
 
 ```{r}
 
 set.seed(1)
 
-data(nyc_airbnb)
-nyc_airbnb = 
-  nyc_airbnb %>% 
-  mutate(rating = review_scores_location / 2) %>%
-  select(boro = neighbourhood_group, neighbourhood, rating, price, room_type,
-         latitude, longitude) %>%
-  filter(!is.na(rating), 
-         boro == "Manhattan",
-         room_type == "Entire home/apt",
-         price %in% 100:500)  %>% 
+ny_noaa_df = ny_noaa %>%
+  mutate(year = lubridate::year(date),
+         month = lubridate::month(date),
+         day = lubridate::day(date)) %>%
+  mutate(tmin = as.numeric(tmin) / 10 * (9 / 5) + 32, tmax = as.numeric(tmax) / 10 * (9 / 5) + 32) %>%
+  mutate(snwd = (as.numeric(snwd) / 10) / 2.54, snow = (as.numeric(snow) / 10) / 2.54) %>%
+  mutate(prcp = (as.numeric(prcp) / 100) / 2.54) %>%
+  mutate(snow = ifelse(snow < 0, NA, snow)) %>%
   sample_n(5000)
 
-nyc_airbnb %>% 
-  count(neighbourhood) %>% 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
-  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar")
-
-
 ```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+```{r}
+ny_noaa_df %>%
+  plot_ly(x = ~tmin, y = ~tmax, type = "scatter", mode = "markers",
+          alpha = .5,
+          text = ~date ) %>%
+  layout(title = "Min vs. Max Temperatures in NY from 1981-2010",
+         xaxis = list(title = "Min Temperature (Degrees F)", autotick = F, dtick = 10),
+         yaxis = list(title = "Max Temperature (Degrees F)"))
+```
+
+
+
 
 Column {data-width=350}
 -----------------------------------------------------------------------
@@ -52,6 +58,23 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
+#average yearly snowfall over time
+
+ny_noaa_df %>% 
+  filter(snow != 0) %>%
+  group_by(year) %>%
+  summarize(mean_snowfall = mean(snow, na.rm = TRUE)) %>%
+  plot_ly(x = ~year, y = ~mean_snowfall, type = "scatter", mode = "lines",
+          alpha = .5) %>%
+  layout(title = "Yearly Mean Snowfall from 1981-2010",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Mean Snowfall (inches)",tickangle = 45))
+
+  
+
+
+
+
 
 ```
 

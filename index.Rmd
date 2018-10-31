@@ -2,24 +2,23 @@
 title: "Alina Levine's Personal Webpage"
 ---
 
-### I have a webpage!
+### About Me
 
-I am a first year masters student in the biostatistics department at Columbia University
-
-
-##Add some links
-
-Here is a link to my [github page] (https://github.com/alinalevine)
+I am a first year masters student in the biostatistics department at Columbia University. I am also a tutor and tutor math for grades 3-12 as well as Spanish. I enjoy photography, playing violin in the New Westchester Symphony Orchestra, and playing tennis. Here is a linked to my [resume](alinalevine_cv.html)
 
 
-Here is a link to my [linkedin] (https://www.linkedin.com/in/alina-levine-bb630a10a/)
+This summer I was did a language exchange in Spain and had the opportunity to explore towns and nature of northern Spain. 
 
+<br>
 
-Here is a link to my [CV] (cv.html)
+#####Picture of Castro Uridales, spain
 
-Here is a link to my [dashboard](dashboard.html)
+<img src="images/IMG_3205.jpg" style="width:50%">
 
-##Picture of my dog
+#####Picture of Santullan sand factory
 
-<img src="images/IMG_4467.jpg" style="width:75%">
+<img src="images/IMG_3222.jpg" style="width:50%">
+
+[About this website](about.html)
+
 

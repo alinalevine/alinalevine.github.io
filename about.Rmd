@@ -1,0 +1,9 @@
+---
+title: "About"
+output: html_document
+---
+
+### About this site
+
+This site was made using rmarkdown and is hosted on github.
+

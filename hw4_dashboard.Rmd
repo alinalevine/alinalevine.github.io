@@ -70,7 +70,7 @@ ny_noaa_df %>%
   plot_ly(x = ~year, y = ~mean_snowfall, type = "scatter", mode = "lines",
           alpha = .5) %>%
   layout(title = "Yearly Mean Snowfall from 1981-2010",
-         xaxis = list(title = "Year", tickangle = -45),
+         xaxis = list(title = "Year", tickangle = -45, dtick = 2),
          yaxis = list(title = "Mean Snowfall (inches)"))
 
   
@@ -89,10 +89,10 @@ ny_noaa_df %>%
 
 ny_noaa_df %>%
   filter(month %in% c("Mar", "Feb", "Jan", "Dec")) %>%
-  mutate(Snowed_yn = ifelse(snow > 0, "snowfall day","no snowfall day")) %>%
-  plot_ly(x = ~Snowed_yn, y = ~tmax, color = ~Snowed_yn, type = "box") %>%
+  mutate(Snow_Status = ifelse(snow > 0, "Snowfall Day","No Snowfall Day")) %>%
+  plot_ly(x = ~Snow_Status, y = ~tmax, color = ~Snow_Status, type = "box") %>%
   layout(title = "Max Daily Temp Dec-Mar by Snowfall Status",
-         yaxis = list(title = "Maximum Daily Temperature"))
+         yaxis = list(title = "Max Daily Temperature"))
   
 
 

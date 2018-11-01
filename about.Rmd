@@ -5,5 +5,5 @@ output: html_document
 
 ### About this site
 
-This site was made using rmarkdown and is hosted on github.
+This site was made using rmarkdown and is hosted on github. Packages used were plotly and tidyverse.
 

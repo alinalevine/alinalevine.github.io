@@ -52,6 +52,22 @@ ny_noaa_df %>%
          yaxis = list(title = "Max Temperature (Degrees F)"))
 ```
 
+###Chart D
+
+```{r}
+
+ny_noaa_df %>%
+  group_by(month, year) %>%
+  summarize(total_precipitation = sum(prcp, na.rm = TRUE)) %>%
+  group_by(month) %>%
+  summarize(mean_total_prcp = mean(total_precipitation, na.rm = TRUE)) %>%
+  plot_ly(x = ~month, y = ~mean_total_prcp, type = "bar") %>%
+  layout(title = "Mean Total Monthly Precipitation (1981-2010)",
+         xaxis = list(title = "Month"),
+         yaxis = list(title = "Mean Precipitation (Inches)"))
+
+
+```
 
 
 
@@ -94,8 +110,6 @@ ny_noaa_df %>%
   layout(title = "Max Daily Temp Dec-Mar by Snowfall Status",
          yaxis = list(title = "Max Daily Temperature"))
   
-
-
 
 ```
 

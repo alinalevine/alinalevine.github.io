@@ -47,9 +47,9 @@ ny_noaa_df %>%
           alpha = .5,
           text = ~date,
           colorscale='Viridis') %>%
-  layout(title = "Min vs. Max Temperatures in NY from 1981-2010",
-         xaxis = list(title = "Min Temperature (Degrees F)", autotick = F, dtick = 10),
-         yaxis = list(title = "Max Temperature (Degrees F)"))
+  layout(title = "Min vs. Max Temp in NY from 1981-2010",
+         xaxis = list(title = "Min Temp (Degrees F)", autotick = F, dtick = 10),
+         yaxis = list(title = "Max Temp (Degrees F)"))
 ```
 
 ###Chart D

@@ -43,7 +43,7 @@ Column {data-width=650}
 ### Chart A
 ```{r}
 ny_noaa_df %>%
-  plot_ly(x = ~tmin, y = ~tmax, type = "scatter", color = ~month, mode = "markers",
+  plot_ly(x = ~tmin, y = ~tmax, type = "scatter", mode = "markers",
           alpha = .5,
           text = ~date,
           colorscale='Viridis') %>%
